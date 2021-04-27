@@ -13,6 +13,11 @@ app.use("/api/v1/channels", channelRoutes);
 app.use("/api/v1/programs", programRoutes);
 app.use("/api/v1/categories", categoryRoutes);
 
-app.listen(port, () => {
+app.listen(port, (err) => {
+  if (err) {
+    console.error('The server could not be started');
+    console.log(err);
+    return;
+  }
   console.log(`Listening on port ${port}`);
 });

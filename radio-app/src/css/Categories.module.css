@@ -1,0 +1,25 @@
+.categories h1 {
+  color: #131313;
+}
+.categories {
+  margin: 0 1em;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.cards {
+  color: #131313;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
+.cards:hover {
+  color: #131313;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 166, 0, 0.5);
+}
+.catName {
+  font-size: 1.5rem;
+  /* padding: 1em; */
+}
