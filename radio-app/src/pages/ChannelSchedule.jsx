@@ -1,42 +1,59 @@
-import { useEffect, useContext } from 'react';
-
+import { useContext } from 'react';
 import { ChannelsContext } from '../contexts/ChannelsProvider';
-// import { useLocation } from 'react-router-dom';
+
+import style from '../css/ChannelSchedule.module.css';
 
 const ChannelSchedule = (props) => {
-  const { getChannelScheduleByDate, schedule } = useContext(ChannelsContext);
-  const { channelId } = props.match.params;
-  // const { state } = useLocation();
-  // console.log('state', state)
+  const { schedule } = useContext(ChannelsContext);
+  // getChannelScheduleByDate borttagen sålänge, behöver senare tihi
+  // const { channelId } = props.match.params;
 
-  useEffect(() => {
-    getChannelScheduleByDate(channelId);
-  });
+  // console.log('sched ', schedule);
 
-  let content = <h2>laddar ..</h2>
-  if (schedule) {
-    console.log('schedule:', schedule);
-    content = (
-      <div>
-        <p>kanaltablå</p>
-        <p>{schedule.title}</p>
+  // styla tills du är nöjd hehe sen ska det finnas en datepicker, när man valt ett date så ska sidan (komponenten)
+  // renderas om med en ny hämtning av getChannelScheduleByDate(channelId (samma id), date (nytt datum)).
+  // onchange metod på date picker så att en ny hämtning görs 
+
+  const scheduledChannels = schedule.schedule.map((c, i) => {
+    console.log('scheduledchannels: ', c);
+    return (
+      <div key={i} className={style.scheduleWrapper}>
+        <div className={style.scheduleBox}>
+          <div className={style.scheduleImg}>
+              <img src={c.imageurl} alt="program"/>
+          </div>
+          <div className={style.scheduleText}>
+            <div>
+              <p><em>{c.starttimeutc}</em></p>
+            </div>
+            <div className={style.scheduleTitle}>
+              <h3>{c.title}</h3>
+            </div>
+            <div className={style.scheduleDesc}>
+              <p>{c.description}</p>
+            </div>
+            
+          </div>
+        </div>
+        
       </div>
     )
-  }
-  return <div>{content}</div>
-  // const scheduledChannels = state.map((channels, i) => {
-  //   return (
-  //     <div key={i}>
-  //       <p>{channels.name}</p>
-  //     </div>
-  //   )
-  // })
+  })
 
-  // return (
-  //   <div>
-  //     {scheduledChannels}
-  //   </div>
-  // )
+  return (
+    <div className={style.scheduleContainer}>
+      <div className={style.scheduleChannelName}>
+        <h1>Tablå för {props.name}</h1>
+        <input 
+          type="date" 
+          id="start" 
+          name="trip-start"
+          value="2021-04-28"
+        />
+      </div>
+      {scheduledChannels}
+    </div>
+  )
 }
  
 export default ChannelSchedule;

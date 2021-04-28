@@ -6,20 +6,16 @@ import style from '../css/Channels.module.css'
 
 const Channels = () => {
   const history = useHistory();
-  const { channels } = useContext(ChannelsContext);
-  // getChannelSchedule borttaget efter channels,
+  const { channels, getChannelScheduleByDate } = useContext(ChannelsContext);
   
-  const handleClick = (channel) => {
-    // async borttaget innan (channel)
-    // await getChannelSchedule(channel.id);
-    // console.log('channels.jsx handleclick', channels)
-    console.log('channel: ', channel)
-    // history.push({
-    //   pathname: `/channels/schedule/${channel.id}`,
-    //   // pathname: '/channelSchedule',
-    //   state: channels
-    // });
-    history.push(`/channels/schedule/${channel.id}`)
+  const handleClick = async (channel) => {
+    let date = new Date();
+    date = date.toISOString().split('T')[0];
+    await getChannelScheduleByDate(channel.id, date);
+    // console.log('channel: ', schedule)
+    history.push({
+      pathname: `/channels/schedule/${channel.id}/${date}`,
+    });
   }
 
   const renderChannels = () => {
@@ -44,7 +40,10 @@ const Channels = () => {
 
   return (
     <div className={style.channels}>
-      <h1>Kanaler</h1>
+      <div className={style.channelText}>
+        <h1>Kanaler</h1>
+        <p><em>Klicka på kanalen att se tablån!</em></p>
+      </div>
       <div className={style.wrapper}>
         {channels && renderChannels()}
       </div>

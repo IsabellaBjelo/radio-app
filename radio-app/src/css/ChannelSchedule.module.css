@@ -1,0 +1,52 @@
+/*
+scheduleContainer
+(scheduleChannelName : h1)
+scheduleWrapper
+scheduleBox
+scheduleImg
+scheduleTitle
+scheduleDesc
+*/
+
+.scheduleContainer {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.scheduleWrapper {
+  /* display: grid;
+  grid-template-rows: repeat(1, 1fr); */
+  border: 1px solid lightgrey;
+  margin: 0.5em 0;
+
+}
+.scheduleBox {
+  display: flex;
+}
+
+/* .scheduleContainer {
+  margin: 0 3em;
+}
+
+.scheduleWrapper {
+  display: flex;
+  flex-direction: row;
+  /* width: 90%; */
+  /* margin: 0 auto; */
+/*}
+.scheduleBox {
+  display: flex;
+  /* flex-direction: row; behövs inte */
+  /* margin: 1em 0; */
+  /*}
+*/
+.scheduleText {
+  /* display: flex;
+  flex-direction: column;
+  margin-left: 1em; */
+  padding: 0.5em;
+}
+
+.scheduleImg img {
+  width: 9em;
+} 

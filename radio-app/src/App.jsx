@@ -18,7 +18,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <ChannelsProvider>
           <Route exact path='/channels' component={Channels} />
-          <Route exact path='/channelSchedule' component={ChannelSchedule}/>
+          <Route exact path='/channels/schedule/:channelId/:date' component={ChannelSchedule}/>
         </ChannelsProvider>
         <CategoriesProvider>
           <Route exact path='/categories' component={Categories} />

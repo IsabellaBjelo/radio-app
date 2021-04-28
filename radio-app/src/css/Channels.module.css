@@ -1,4 +1,4 @@
-.channels h1 {
+.channelText {
   text-align: center;
 }
 .wrapper {
@@ -8,7 +8,7 @@
   margin: 0 auto;
 }
 .cards {
-  background: #464646;
+  background: #f7f4ef;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 #00000033;
   color: white;
@@ -22,14 +22,15 @@
 }
 
 .cards:hover {
-  background: #464646;
+  background: #f7f4ef;
+  color: black;
 }
 .cards:hover img {
   display: none;
 }
 .cards:hover .tagline {
   display: inline-block;
-  padding: 1em;
+  padding: 0.5em;
 }
 .channelName {
   display: none;
