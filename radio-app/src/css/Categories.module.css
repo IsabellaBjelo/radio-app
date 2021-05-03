@@ -1,12 +1,13 @@
 .categories h1 {
   color: #131313;
+  text-align: center;
 }
 .categories {
   margin: 0 1em;
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 .cards {
   color: #131313;
@@ -22,4 +23,18 @@
 .catName {
   font-size: 1.5rem;
   /* padding: 1em; */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1280px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

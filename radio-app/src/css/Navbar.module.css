@@ -6,8 +6,7 @@
 
 .link {
   color: gray;
-  font-size: 1.2rem;
-  margin: 0 1em;
+  margin: 0 0.2em;
   text-decoration: underline solid transparent;
   transition: text-decoration 1s ease;
 }
@@ -15,3 +14,19 @@
 .link:hover {
   text-decoration: underline solid orange;
 }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) {
+  .link {
+    font-size: 1.2rem;
+    margin: 0 1em;
+  }
+}
+
+/* Desktops and laptops ----------- */
+/* @media only screen  and (min-width : 1280px) {
+  .link {
+    font-size: 1.2rem;
+    margin: 0 1em;
+  }
+} */

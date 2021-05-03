@@ -1,24 +1,17 @@
-
+.programsContainer h1 {
+  text-align: center;
+}
 .programsWrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* width: 1100px; */
-  /* display: flex;
-  flex-direction: column; */
-  margin: 0 6em;
+  grid-template-columns: repeat(1, 1fr);
+  
 }
 .cards {
   box-shadow: 0 2px 8px 0 #0000001c;
-  cursor: pointer;
   margin: 2em auto;
   width: 90%;
-  transition: 0.2s;
 }
-.cards:hover {
-  border: 0.5px solid #131313;
-}
-
-img {
+.programsBox img {
   width: 100%;
 }
 .programText {
@@ -28,19 +21,27 @@ img {
   margin: 0;
 }
 
-/* .cards:hover {
-  background: #464646;
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) {
+  .programsWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 3em;
+  }
 }
-.cards:hover img {
-  display: none;
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1280px) {
+  .programsWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 6em;
+  }
+  .cards {
+    cursor: pointer;
+    width: 90%;
+    transition: 0.2s;
+  }
+  .cards:hover {
+    border: 0.5px solid #131313;
+  }
 }
-.cards:hover .tagline {
-  display: inline-block;
-  padding: 1em;
-}
-.channelName {
-  display: none;
-}
-.logo img {
-  width: 100%;
-} */

@@ -1,22 +1,31 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { ChannelsContext } from '../contexts/ChannelsProvider';
 
 import style from '../css/ChannelSchedule.module.css';
 
 const ChannelSchedule = (props) => {
-  const { schedule } = useContext(ChannelsContext);
-  // getChannelScheduleByDate borttagen sålänge, behöver senare tihi
-  // const { channelId } = props.match.params;
+  const today = new Date().toISOString().slice(0, 10);
 
-  // console.log('sched ', schedule);
+  const { schedule, getChannelScheduleByDate } = useContext(ChannelsContext);
+  const [currentDate, setCurrentDate] = useState(today);
+  const [currentSchedule, setCurrentSchedule] = useState(schedule.schedule);
+  const { channelId } = props.match.params;
+  
+  const changeDate = async (e) => {
+    setCurrentDate(e.target.value);
+    await getChannelScheduleByDate(channelId, e.target.value);
+    console.log('channelschedule, schedule: ', schedule);
+    setCurrentSchedule(schedule.schedule);
+   // scheduledChannels();
+  }
 
-  // styla tills du är nöjd hehe sen ska det finnas en datepicker, när man valt ett date så ska sidan (komponenten)
-  // renderas om med en ny hämtning av getChannelScheduleByDate(channelId (samma id), date (nytt datum)).
-  // onchange metod på date picker så att en ny hämtning görs 
+  useEffect(() => {
+    console.log('aiowjdaoij')
+    scheduledChannels();
+  }, [currentSchedule])
 
-  const scheduledChannels = schedule.schedule.map((c, i) => {
-    console.log('scheduledchannels: ', c);
-    return (
+  const scheduledChannels = () => {
+      return currentSchedule.map((c, i) => (
       <div key={i} className={style.scheduleWrapper}>
         <div className={style.scheduleBox}>
           <div className={style.scheduleImg}>
@@ -38,7 +47,7 @@ const ChannelSchedule = (props) => {
         
       </div>
     )
-  })
+  )};
 
   return (
     <div className={style.scheduleContainer}>
@@ -48,10 +57,11 @@ const ChannelSchedule = (props) => {
           type="date" 
           id="start" 
           name="trip-start"
-          value="2021-04-28"
+          value={currentDate}
+          onChange={(e) => changeDate(e)}
         />
       </div>
-      {scheduledChannels}
+      {scheduledChannels()}
     </div>
   )
 }

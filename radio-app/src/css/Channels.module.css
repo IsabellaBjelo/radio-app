@@ -3,38 +3,58 @@
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 1100px;
+  grid-template-columns: repeat(1, 1fr);
   margin: 0 auto;
 }
 .cards {
   background: #f7f4ef;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 #00000033;
-  color: white;
+  color: black;
   cursor: pointer;
   margin: 2em auto;
   padding: 0.5em;
   width: 90%;
-}
-.tagline {
-  display: none;
-}
-
-.cards:hover {
-  background: #f7f4ef;
-  color: black;
-}
-.cards:hover img {
-  display: none;
-}
-.cards:hover .tagline {
-  display: inline-block;
-  padding: 0.5em;
 }
 .channelName {
   display: none;
 }
 .logo img {
   width: 100%;
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) {
+  .channels {
+    margin: 0 1em;
+  }
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1280px) {
+  .channels {
+    margin: 0 2em;
+  }
+  .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .tagline {
+    display: none;
+  }
+  .cards:hover {
+    background: #f7f4ef;
+    color: black;
+  }
+  .cards:hover img {
+    display: none;
+  }
+  .cards:hover .tagline {
+    display: inline-block;
+    padding: 0.5em;
+  }
 }
