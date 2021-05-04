@@ -1,66 +1,47 @@
-/*
-scheduleContainer
-(scheduleChannelName : h1)
-scheduleWrapper
-scheduleBox
-scheduleImg
-scheduleTitle
-scheduleDesc
-*/
-
 .scheduleContainer {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
 }
-
 .scheduleWrapper {
-  /* display: grid;
-  grid-template-rows: repeat(1, 1fr); */
   border: 1px solid lightgrey;
   margin: 0.5em 0;
-
 }
 .scheduleBox {
   display: flex;
-}
-
-/* .scheduleContainer {
-  margin: 0 3em;
-}
-
-.scheduleWrapper {
-  display: flex;
-  flex-direction: row;
-  /* width: 90%; */
-  /* margin: 0 auto; */
-/*}
-.scheduleBox {
-  display: flex;
-  /* flex-direction: row; behövs inte */
-  /* margin: 1em 0; */
-  /*}
-*/
-.scheduleText {
-  /* display: flex;
   flex-direction: column;
-  margin-left: 1em; */
+  align-items: center;
   padding: 0.5em;
 }
-
+.scheduleText {
+  text-align: center;
+}
 .scheduleImg img {
-  width: 9em;
+  width: 7em;
 } 
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-/* Styles */
-}
 
-/* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) {
-/* Styles */
+  .scheduleContainer {
+    margin: 1em;
+  }
+  .scheduleBox {
+    flex-direction: row;
+  }
+  .scheduleText {
+    text-align: left;
+    padding-left: 1em;
+  }
 }
-
-/* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1280px) {
-/* Styles */
+  .scheduleContainer {
+    margin: 1em 3em;
+  }
+  .scheduleWrapper {
+    margin: 0.5em 0;
+  }
+  .scheduleText {
+    padding: 0.5em;
+  }
+  .scheduleImg img {
+    width: 9em;
+  }
 }

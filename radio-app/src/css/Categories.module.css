@@ -22,17 +22,14 @@
 }
 .catName {
   font-size: 1.5rem;
-  /* padding: 1em; */
 }
 
-/* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) {
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1280px) {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);

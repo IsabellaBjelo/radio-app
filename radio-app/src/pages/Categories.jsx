@@ -17,7 +17,6 @@ const Categories = () => {
         data: programByCat,
       }
     })
-    console.log('grej: ', programByCat);
   }
 
 

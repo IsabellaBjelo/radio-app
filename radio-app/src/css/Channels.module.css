@@ -23,9 +23,6 @@
   width: 100%;
 }
 
-
-
-/* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) {
   .channels {
     margin: 0 1em;
@@ -34,8 +31,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1280px) {
   .channels {
     margin: 0 2em;

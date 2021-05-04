@@ -20,7 +20,6 @@ const CategoriesProvider = (props) => {
   const getProgramByCat = async (programCategoryId) => {
     let programByCat = await fetch(`/api/v1/programs/category/${programCategoryId}`)
     programByCat = await programByCat.json();
-    console.log('hello', programByCat.programs)
     setProgramByCat(programByCat.programs);
   };
 

@@ -9,14 +9,15 @@ import Categories from './pages/Categories';
 import Channels from './pages/Channels';
 import ProgramByCategory from './pages/ProgramByCategory'
 import ChannelSchedule from './pages/ChannelSchedule';
+import Login from './components/Login';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <Route exact path='/' component={HomePage} />
         <ChannelsProvider>
+          <Route exact path='/' component={HomePage} />
           <Route exact path='/channels' component={Channels} />
           <Route exact path='/channels/schedule/:channelId/:date' component={ChannelSchedule}/>
         </ChannelsProvider>
@@ -24,6 +25,7 @@ function App() {
           <Route exact path='/categories' component={Categories} />
           <Route exact path='/programByCategory' component={ProgramByCategory} />
         </CategoriesProvider>
+        <Route exact path='/login' component={Login} />
       </BrowserRouter>
     </div>
   );

@@ -12,7 +12,6 @@ const Channels = () => {
     let date = new Date();
     date = date.toISOString().split('T')[0];
     await getChannelScheduleByDate(channel.id, date);
-    // console.log('channel: ', schedule)
     history.push({
       pathname: `/channels/schedule/${channel.id}/${date}`,
     });

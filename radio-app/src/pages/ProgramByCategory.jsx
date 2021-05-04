@@ -25,8 +25,6 @@ const ProgramByCategory = () => {
     )
   })
 
-  //  <h1>{programInCat.programcategory.name}</h1>
-
   return (
     <div className={style.programsContainer}>
       <h1>{state.name}</h1>
@@ -38,17 +36,3 @@ const ProgramByCategory = () => {
 }
  
 export default ProgramByCategory;
-
-/* <div key={i} className={style.cards} onClick={() => handleClick(channel.channelId)} >
-  <div className={style.channelContainer}>
-    <div className={style.channelName}>
-      <p>{channel.name}</p>
-    </div>
-    <div className={style.logo}>
-      <img src={channel.image} alt="channel logo"/>
-    </div>
-    <div className={style.tagline}>
-      <p>{channel.tagline}</p>
-    </div>
-  </div>
-</div> */

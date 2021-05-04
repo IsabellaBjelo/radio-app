@@ -5,12 +5,12 @@ import style from '../css/Navbar.module.css'
 
 const Navbar = () => {
   const [links] = useState(
-    // setLinks borttaget så länge tjat i terminalen
     [
       { name: "Hem", url: "/" }, 
       { name: "Kanaler", url: "/channels" }, 
       { name: "Kategorier", url: "/categories" },
-      { name: "Mina Sidor", url: "/mypage" }
+      // { name: "Mina Sidor", url: "/mypage" },
+      // { name: "Logga in", url: "/login" }
     ]);
 
   const mapLinks = () => {

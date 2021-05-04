@@ -14,14 +14,12 @@ const ChannelSchedule = (props) => {
   const changeDate = async (e) => {
     setCurrentDate(e.target.value);
     await getChannelScheduleByDate(channelId, e.target.value);
-    console.log('channelschedule, schedule: ', schedule);
     setCurrentSchedule(schedule.schedule);
-   // scheduledChannels();
   }
 
   useEffect(() => {
-    console.log('aiowjdaoij')
     scheduledChannels();
+    // eslint-disable-next-line
   }, [currentSchedule])
 
   const scheduledChannels = () => {
@@ -52,7 +50,6 @@ const ChannelSchedule = (props) => {
   return (
     <div className={style.scheduleContainer}>
       <div className={style.scheduleChannelName}>
-        <h1>Tablå för {props.name}</h1>
         <input 
           type="date" 
           id="start" 

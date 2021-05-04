@@ -1,0 +1,26 @@
+.homePage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}
+.hpLogo img {
+  width: 10em;
+  border-radius: 2px;
+}
+.hpText {
+  text-align: center;
+}
+@media only screen and (min-device-width : 768px) {
+  .homePage {
+    margin: 2em 5em;
+  }
+  .hpLogo img {
+    width: 20em;
+  }
+}
+ @media only screen  and (min-width : 1280px) {
+  .homePage {
+    margin: 3em 10em;
+  }
+}
